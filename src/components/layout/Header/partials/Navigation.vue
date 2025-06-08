@@ -30,8 +30,8 @@
 
       <div class="contact-container">
         <div class="contact">
-        <h3>Contact</h3>
-        <div class="dotted-line"></div>
+          <h3>Contact</h3>
+          <div class="dotted-line"></div>
           <div class="contact-links">
             <DefaultLink type="tel" text="+86 852 346 000" /> <br>
             <DefaultLink type="mailto" text="info@foodzero.com" />
