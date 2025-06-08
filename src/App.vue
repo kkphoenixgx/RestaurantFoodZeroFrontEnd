@@ -1,7 +1,9 @@
 <template>
   <section>
     <Header/>
-
+    <section>
+      <router-view />
+    </section>
     <Footer/>
   </section>
 </template>

@@ -1,23 +1,23 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
-import Home from '../views/Home.vue'
-import ComingSoon from '../views/ComingSoon.vue'
-import Contact from '../views/Contact.vue'
-import About from '../views/About.vue'
+import Home from '../views/Home/Home.vue'
+import ComingSoon from '../views/CommingSoon/ComingSoon.vue'
+import Contact from '../views/Contact/Contact.vue'
+import About from '../views/About/About.vue'
 
-import Reservation from '../views/Reservation.vue'
-import Login from '../views/Login.vue'
-import SignUp from '../views/SignUp.vue'
-import UserView from '../views/UserView.vue'
+import Reservation from '../views/Reservation/Reservation.vue'
+import Login from '../views/Auth/Login.vue'
+import SignUp from '../views/Auth/SignUp.vue'
+import UserView from '../views/Auth/UserView.vue'
 
-import Blog from '../views/Blog.vue'
-import Portifolio from '../views/Portifolio.vue'
-import Menu from '../views/Menu.vue'
+import Blog from '../views/Blog/Blog.vue'
+import Portifolio from '../views/Portifolio/Portifolio.vue'
+import Menu from '../views/Menu/Menu.vue'
 
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/comingSoon', component: ComingSoon },
+  { path: '/comingsoon', component: ComingSoon },
   { path: '/contact', component: Contact },
   { path: '/about', component: About },
   { path: '/reservation', component: Reservation },

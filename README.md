@@ -15,13 +15,14 @@
 - [ ] Blog-Post
 - [ ] Portifolio
 - [ ] Portifolio-Item
-- [ ] Service Categorias
-- [ ] Servuce Comentarios
-- [ ] Service Plates
-- [ ] Service posts
-- [ ] Service reservations
-- [ ] Service tags
-- [ ] Service users
+
+- [X] Service Categorias
+- [X] Servuce Comentarios
+- [X] Service Plates
+- [X] Service posts
+- [X] Service reservations
+- [X] Service tags
+- [X] Service users
 
 ## 🤓 Info Pastas
 
