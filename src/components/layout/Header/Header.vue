@@ -49,13 +49,14 @@ function handleLogoClick(){
   header{
     display: flex;
     justify-content: space-between;
+    width: 100%;
     height: 12vh;
     padding: 1%;
     min-width: 450px;
     min-height: 70px;
     background-color: transparent;
     position: absolute;
-    width: 100%;
+    z-index: 5;
   }
   
   .header-left, .header-right{
