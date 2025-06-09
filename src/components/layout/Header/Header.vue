@@ -4,7 +4,7 @@
     <Navigation :height="navHeight" @update:height="navHeight = $event" />
 
     <div class="header-left">
-      <img :src="headerLogo" alt="Logo do header">
+      <img @click="handleLogoClick()" :src="headerLogo" alt="Logo do header">
       <div class="hamburguer-menu" @click="toggleNavigation">
         <span></span>
         <span></span>
@@ -13,7 +13,7 @@
     </div>
     <div class="header-right">
       <DefaultLink class="header-link" type="tel" text="+86 852 346 000" />      
-      <DefaultButton text="Reservations" />
+      <DefaultButton text="Reservations" link="/reservation" />
     </div>
   </header>
 
@@ -29,12 +29,17 @@
   import DefaultLink from "../../ui/DefaultLink.vue";
 
 import { ref } from 'vue';
+import { useRouter } from "vue-router";
 
 const navHeight = ref('0vh');
-
+const router = useRouter()
 
 function toggleNavigation() {
   navHeight.value = navHeight.value === '0vh' ? '100vh' : '0vh';
+}
+
+function handleLogoClick(){
+  router.push('/');
 }
 
 </script>
@@ -48,9 +53,9 @@ function toggleNavigation() {
     padding: 1%;
     min-width: 450px;
     min-height: 70px;
-    background-color: black; /*transparent*/
-    /* position: absolute;
-    width: 100%; */
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
   }
   
   .header-left, .header-right{
@@ -72,6 +77,7 @@ function toggleNavigation() {
 
   .header-left img{
     width: 110px;
+    cursor: pointer;
   }
   .header-link{
     margin-right: 3%;
