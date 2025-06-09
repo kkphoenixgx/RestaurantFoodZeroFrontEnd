@@ -1,8 +1,18 @@
-<script setup lang="ts"></script>
 
 <template>
-  <h1>Hello Reservation!</h1>
+
+  <div class="reservation">
+    <ComingSoon/>
+    <ReservationForm/>
+  </div>
+
 </template>
+
+<script setup lang="ts">
+  import ComingSoon from './partials/ComingSoon.vue';
+  import ReservationForm from './partials/ReservationForm.vue';
+
+</script>
 
 <style scoped>
 </style>

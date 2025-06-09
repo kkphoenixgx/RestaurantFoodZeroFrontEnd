@@ -17,6 +17,18 @@ body{
   font-style: normal;
 }
 @font-face {
+  font-family: 'Rufina';
+  src: url('../public/fonts/Rufina/Rufina-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rufina';
+  src: url('../public/fonts/Rufina/Rufina-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Inter';
   src: url('/fonts/Inter/Inter-Bold.ttf') format('truetype');
   font-weight: 700;
@@ -38,7 +50,8 @@ body{
   --white-default : #FFF;
   --white-secondary : #EBF0E4;
   --black-default : #000;
-  --green-havier: #192200;
+  --green-havier: #233000;
+  --green-secondary-havier: #101500;
   --green-seconday: #5E6600;
   --green-lighter: #9CAA00;
 

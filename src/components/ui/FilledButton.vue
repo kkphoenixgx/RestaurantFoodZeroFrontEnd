@@ -1,11 +1,19 @@
+
 <template>
-  <button class="default-button" >{{ props.text }}</button>
+  <button
+    class="default-button"
+    :type="props.type ?? 'button'"
+  >
+    {{ props.text }}
+  </button>
 </template>
 
 <script setup lang="ts">
-  const props = defineProps<{
-    text: string
-  }>();
+
+const props = defineProps<{
+  text: string,
+  type?: 'button' | 'submit' | 'reset'
+}>();
 
 </script>
 

@@ -2,12 +2,9 @@
 
 ## TODO
 
-- [ ] Header
-- [ ] Footer
-- [ ] Coming Soon
+- [ ] Home
 - [ ] Contact
 - [ ] About
-- [ ] Reservation
 - [ ] Login
 - [ ] SignUp
 - [ ] UserView
@@ -15,6 +12,11 @@
 - [ ] Blog-Post
 - [ ] Portifolio
 - [ ] Portifolio-Item
+
+- [X] Header
+- [X] Footer
+- [X] Coming Soon
+- [X] Reservation
 
 - [X] Service Categorias
 - [X] Servuce Comentarios

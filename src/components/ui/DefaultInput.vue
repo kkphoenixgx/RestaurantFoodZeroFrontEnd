@@ -1,18 +1,31 @@
 <template>
-  <input :type="props.type" :placeholder="props.text">
+  <input
+    :type="props.type"
+    :placeholder="props.text"
+    required
+    v-bind="$attrs"
+    :class="props.class"
+    :style="props.placeholderColor ? { '--placeholder-color': props.placeholderColor } : {}"
+  />
 </template>
 
 <script setup lang="ts">
-  const props = defineProps<{
-    text: string,
-    type :string
-  }>();
+
+const props = defineProps<{
+  text: string,
+  type: string,
+  class?: string,
+  placeholderColor?: string
+}>();
+
+defineOptions({ inheritAttrs: false });
 </script>
 
 <style scoped>
 
 
-input{
+
+input {
   padding:2%;
   width: 55%;
   background-color: transparent;
@@ -21,8 +34,12 @@ input{
   outline: none;
 }
 
-input::placeholder{
-  color: var(--white-default);
+
+
+
+input::placeholder {
+  color: var(--placeholder-color, var(--white-default)) !important;
+  opacity: 1;
 }
 
 input:focus {

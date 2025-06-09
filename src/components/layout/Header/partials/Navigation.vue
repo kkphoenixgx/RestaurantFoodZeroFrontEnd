@@ -134,7 +134,6 @@ function closeNavigation(){
     color: var(--green-lighter);
   }
 
-
   h3{
     color: var(--white-default);
   }
@@ -144,7 +143,6 @@ function closeNavigation(){
     border-bottom: 1px dashed var(--white-default);
     margin-bottom: 5%;
   }
-
 
   .contact-links, .contact-adress{
     margin-bottom: 5%;
@@ -159,8 +157,6 @@ function closeNavigation(){
     width: fit-content;
     margin-right: 6%;
   }
-
-
 
   /* ----------- Close button ----------- */
 

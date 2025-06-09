@@ -84,7 +84,7 @@ footer{
   padding: 3%;
   align-content: center;
   flex-direction: column;
-  background-color: var(--green-havier);
+  background-color: var(--green-secondary-havier);
   color: var(--white-default);
 
 }
