@@ -1,3 +1,4 @@
+
 import { apiGet, apiPost, apiPut, apiDelete } from './api';
 import Plate from '../types/Model/Plate';
 
@@ -17,11 +18,11 @@ export async function getPlatesByCategory(categoryId: number): Promise<Plate[]> 
   return apiGet<Plate[]>(`/plates/category/${categoryId}`);
 }
 
-export async function createPlate(data: any): Promise<Plate> {
+export async function createPlate<T extends object>(data: T): Promise<Plate> {
   return apiPost<Plate>(`/plates`, data);
 }
 
-export async function updatePlate(id: number, data: any): Promise<Plate> {
+export async function updatePlate<T extends object>(id: number, data: T): Promise<Plate> {
   return apiPut<Plate>(`/plates/${id}`, data);
 }
 

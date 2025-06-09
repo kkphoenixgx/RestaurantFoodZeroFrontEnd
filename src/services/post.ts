@@ -1,3 +1,4 @@
+
 import { apiGet, apiPost, apiPut, apiDelete } from './api';
 import Post from '../types/Model/Post';
 
@@ -9,11 +10,11 @@ export async function listPosts(): Promise<Post[]> {
   return apiGet<Post[]>(`/post`);
 }
 
-export async function createPost(data: any): Promise<Post> {
+export async function createPost<T extends object>(data: T): Promise<Post> {
   return apiPost<Post>(`/post`, data);
 }
 
-export async function updatePost(id: number, data: any): Promise<Post> {
+export async function updatePost<T extends object>(id: number, data: T): Promise<Post> {
   return apiPut<Post>(`/post/${id}`, data);
 }
 

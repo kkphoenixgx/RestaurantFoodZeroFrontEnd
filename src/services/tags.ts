@@ -1,3 +1,4 @@
+
 import { apiGet, apiPost, apiPut, apiDelete } from './api';
 import Tag from '../types/Model/Tag';
 
@@ -9,11 +10,11 @@ export async function listTags(): Promise<Tag[]> {
   return apiGet<Tag[]>(`/tags`);
 }
 
-export async function createTag(data: { name: string }): Promise<Tag> {
+export async function createTag<T extends object>(data: T): Promise<Tag> {
   return apiPost<Tag>(`/tags`, data);
 }
 
-export async function updateTag(id: number, data: { name: string }): Promise<Tag> {
+export async function updateTag<T extends object>(id: number, data: T): Promise<Tag> {
   return apiPut<Tag>(`/tags/${id}`, data);
 }
 

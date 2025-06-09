@@ -1,3 +1,4 @@
+
 import { apiGet, apiPost, apiPut, apiDelete } from './api';
 import Comentary from '../types/Model/Comentary';
 
@@ -17,11 +18,11 @@ export async function getComentariesFromUser(userId: number): Promise<Comentary[
   return apiGet<Comentary[]>(`/comentaries/user/${userId}`);
 }
 
-export async function postComentary(data: { date: string; description: string; postId: number; userId: number }): Promise<Comentary> {
+export async function postComentary<T extends object>(data: T): Promise<Comentary> {
   return apiPost<Comentary>(`/comentaries`, data);
 }
 
-export async function updateComentary(id: number, data: { date: string; description: string; postId: number; userId: number }): Promise<Comentary> {
+export async function updateComentary<T extends object>(id: number, data: T): Promise<Comentary> {
   return apiPut<Comentary>(`/comentaries/${id}`, data);
 }
 

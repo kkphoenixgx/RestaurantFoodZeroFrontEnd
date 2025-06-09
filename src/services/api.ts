@@ -13,7 +13,7 @@ export async function apiGet<T>(endpoint: string): Promise<T> {
   return handleResponse<T>(res);
 }
 
-export async function apiPost<T>(endpoint: string, data: any): Promise<T> {
+export async function apiPost<T>(endpoint: string, data: unknown): Promise<T> {
   const res = await fetch(`${API_BASE_URL}${endpoint}` , {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -22,7 +22,7 @@ export async function apiPost<T>(endpoint: string, data: any): Promise<T> {
   return handleResponse<T>(res);
 }
 
-export async function apiPut<T>(endpoint: string, data: any): Promise<T> {
+export async function apiPut<T>(endpoint: string, data: unknown): Promise<T> {
   const res = await fetch(`${API_BASE_URL}${endpoint}` , {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
