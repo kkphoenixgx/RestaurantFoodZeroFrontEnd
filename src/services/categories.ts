@@ -1,21 +1,30 @@
 
 import { apiGet, apiPost, apiPut, apiDelete } from './api';
-import Category from '../types/Model/Category.ts';
+import Category from '../types/Model/Category';
+import type { ICategoryApiResponse as CategoryApiResponse } from '../types/ICategoryApiResponse';
+
+export function categoryFromApi(data: CategoryApiResponse): Category {
+  return new Category(data._id, data._name);
+}
 
 export async function getCategory(id: number): Promise<Category> {
-  return apiGet<Category>(`/categories/${id}`);
+  const data = await apiGet<CategoryApiResponse>(`/categories/${id}`);
+  return categoryFromApi(data);
 }
 
 export async function listCategories(): Promise<Category[]> {
-  return apiGet<Category[]>(`/categories`);
+  const data = await apiGet<CategoryApiResponse[]>(`/categories`);
+  return data.map(categoryFromApi);
 }
 
 export async function createCategory<T extends object>(data: T): Promise<Category> {
-  return apiPost<Category>(`/categories`, data);
+  const res = await apiPost<CategoryApiResponse>(`/categories`, data);
+  return categoryFromApi(res);
 }
 
 export async function updateCategory<T extends object>(id: number, data: T): Promise<Category> {
-  return apiPut<Category>(`/categories/${id}`, data);
+  const res = await apiPut<CategoryApiResponse>(`/categories/${id}`, data);
+  return categoryFromApi(res);
 }
 
 export async function deleteCategory(id: number): Promise<{ message: string }> {
