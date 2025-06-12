@@ -28,7 +28,6 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import HeaderPush from '../../components/ui/HeaderPush.vue';
-import { listUsers } from '../../services/user';
 
 import headerLogo from '../../assets/images/header-logo.png';
 
