@@ -4,7 +4,7 @@
     
     <div class="login-page" >
       <div class="login-box">
-        <img src="/src/assets/images/header-logo.png" alt="Logo FoodZero" class="login-logo" />
+        <img :src="headerLogo" alt="Logo FoodZero" class="login-logo" />
         <h1>Entrar</h1>
         <form @submit.prevent="handleLogin">
           <div class="form-group">
@@ -18,7 +18,7 @@
           <button type="submit" class="login-btn">Entrar</button>
         </form>
         <p v-if="errorMsg" class="login-error">{{ errorMsg }}</p>
-        <p class="signup-link">Não tem uma conta? <a href="/signup">Cadastre-se</a></p>
+        <p class="signup-link">Não tem uma conta? <router-link to="/signup">Cadastre-se</router-link></p>
       </div>
     </div>
   </div>
@@ -29,6 +29,8 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import HeaderPush from '../../components/ui/HeaderPush.vue';
 import { listUsers } from '../../services/user';
+
+import headerLogo from '../../assets/images/header-logo.png';
 
 const email = ref('');
 const password = ref('');

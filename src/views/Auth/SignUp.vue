@@ -4,7 +4,7 @@
     <HeaderPush />
     <div class="signup-page">
       <div class="signup-box">
-        <img src="/src/assets/images/header-logo.png" alt="Logo FoodZero" class="signup-logo" />
+        <img :src="headerLogo" alt="Logo FoodZero" class="signup-logo" />
         <h1>Criar Conta</h1>
         <form @submit.prevent="handleSignUp">
           <div class="form-group">
@@ -26,7 +26,7 @@
           <button type="submit" class="signup-btn">Cadastrar</button>
         </form>
         <p v-if="errorMsg" class="signup-error">{{ errorMsg }}</p>
-        <p class="login-link">Já tem uma conta? <a href="/login">Entrar</a></p>
+        <p class="login-link">Já tem uma conta? <router-link to="/login">Entrar</router-link></p>
       </div>
     </div>
   </div>
@@ -37,6 +37,8 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import HeaderPush from '../../components/ui/HeaderPush.vue';
 import { listUsers } from '../../services/user';
+
+import headerLogo from '../../assets/images/header-logo.png';
 
 const name = ref('');
 const email = ref('');

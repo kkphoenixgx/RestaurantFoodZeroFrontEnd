@@ -5,7 +5,7 @@
     <div class="blog-post-page" v-if="!loading && post">
       <h1>{{ post.tittle }}</h1>
       <div class="blog-post-meta">
-        <img :src="post.user?.userImagePath || '/src/assets/images/user-default.png'" alt="Autor" class="blog-post-author-img" />
+        <img :src="post.user?.userImagePath || defaultUser" alt="Autor" class="blog-post-author-img" />
         <span class="blog-post-author">{{ post.user?.name }}</span>
         <span class="blog-post-date">{{ post.date.toLocaleDateString() }}</span>
         <span class="blog-post-coments">{{ post.comentaries.length }} comentários</span>
@@ -51,6 +51,8 @@ import { useRoute } from 'vue-router';
 import { getPost } from '../../../services/post';
 import type Post from '../../../types/Model/Post';
 import HeaderPush from '../../../components/ui/HeaderPush.vue';
+
+import defaultUser from '../../../assets/images/user-default.png';
 
 import { getUser } from '../../../services/user';
 import { postComentary, getComentariesFromAPost } from '../../../services/comentaries';

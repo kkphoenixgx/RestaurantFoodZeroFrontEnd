@@ -21,7 +21,7 @@
             <div v-for="post in posts" :key="post.id" class="blog-post-item" @click="goToPost(post.id)">
               <PostWidget
                 :id="post.id"
-                :imagePath="post.user?.userImagePath || '/src/assets/images/user-default.png'"
+                :imagePath="post.user?.userImagePath || defaultUser"
                 :tittle="post.tittle"
                 :description="post.description"
                 :tags="post.tags"
@@ -45,6 +45,8 @@ import { listPosts } from '../../services/post';
 import type Post from '../../types/Model/Post';
 import HeaderPush from '../../components/ui/HeaderPush.vue';
 import PostWidget from '../../components/ui/PostWidget.vue';
+
+import defaultUser from '../../assets/images/user-default.png';
 
 const posts = ref<Post[]>([]);
 const loading = ref(true);

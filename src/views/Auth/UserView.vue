@@ -5,7 +5,7 @@
       <h1>Perfil do Usuário</h1>
       <form class="user-form" @submit.prevent="handleSave">
         <div class="user-photo-section">
-          <img :src="userImagePreview || form.userImagePath || '/src/assets/images/user-default.png'" alt="Foto do usuário" class="user-photo" />
+          <img :src="userImagePreview || form.userImagePath || defaultUser" alt="Foto do usuário" class="user-photo" />
           <input type="file" accept="image/*" @change="onPhotoChange" />
         </div>
         <DefaultInput class="user-input" type="text" text="Nome" v-model="form.name" placeholder-color="#222" />
@@ -27,6 +27,8 @@ import FilledButton from '../../components/ui/FilledButton.vue';
 import DefaultToast from '../../components/ui/DefaultToast.vue';
 import { updateUser } from '../../services/user';
 import User from '../../types/Model/User';
+
+import defaultUser from '../../assets/images/user-default.png';
 
 const showToast = ref(false);
 const toastText = ref('');

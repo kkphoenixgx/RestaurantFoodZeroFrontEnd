@@ -129,7 +129,7 @@
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
     
     <div class="grid-plates-categories">
-      <a href="/menu/" class="card">
+      <router-link to="/menu" class="card">
 
         <div class="gradiant-head">
           <h3>Starters</h3>
@@ -137,23 +137,23 @@
         </div>
 
         <img :src="starterImage" alt="Starter plate">
-      </a>
+      </router-link>
 
-      <a href="/menu/" class="card">
+      <router-link to="/menu" class="card">
         <div class="gradiant-head">
           <h3>Mains</h3>
           <img :src="arrowIcon" alt="Arrow Icon">
         </div>
         <img :src="mainPlateImage" alt="Main plate">
-      </a>
+      </router-link>
 
-      <a href="/menu/" class="card">
+      <router-link to="/menu" class="card">
         <div class="gradiant-head">
           <h3>Soups</h3>
           <img :src="arrowIcon" alt="Arrow Icon">
         </div>
         <img :src="soupsImage" alt="Soup plate">
-      </a>
+      </router-link>
       
     </div>
 
