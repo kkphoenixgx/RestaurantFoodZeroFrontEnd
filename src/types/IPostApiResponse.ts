@@ -6,6 +6,7 @@ export interface IPostApiResponse {
   _id: number;
   _date: string;
   _description: string;
+  _tittle :string;
   _user: IUserApiResponse;
   _tags: ITagApiResponse[];
   _comentaries: IComentaryApiResponse[];

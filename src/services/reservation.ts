@@ -16,25 +16,25 @@ function reservationFromApi(data: ReservationApiResponse): Reservation {
 }
 
 export async function getReservation(id: number): Promise<Reservation> {
-  const data = await apiGet<ReservationApiResponse>(`/reservation/${id}`);
+  const data = await apiGet<ReservationApiResponse>(`/reservations/${id}`);
   return reservationFromApi(data);
 }
 
 export async function listReservations(): Promise<Reservation[]> {
-  const data = await apiGet<ReservationApiResponse[]>(`/reservation`);
+  const data = await apiGet<ReservationApiResponse[]>(`/reservations`);
   return data.map(reservationFromApi);
 }
 
 export async function createReservation<T extends object>(data: T): Promise<Reservation> {
-  const res = await apiPost<ReservationApiResponse>(`/reservation`, data);
+  const res = await apiPost<ReservationApiResponse>(`/reservations`, data);
   return reservationFromApi(res);
 }
 
 export async function updateReservation<T extends object>(id: number, data: T): Promise<Reservation> {
-  const res = await apiPut<ReservationApiResponse>(`/reservation/${id}`, data);
+  const res = await apiPut<ReservationApiResponse>(`/reservations/${id}`, data);
   return reservationFromApi(res);
 }
 
 export async function deleteReservation(id: number): Promise<{ message: string }> {
-  return apiDelete<{ message: string }>(`/reservation/${id}`);
+  return apiDelete<{ message: string }>(`/reservations/${id}`);
 }

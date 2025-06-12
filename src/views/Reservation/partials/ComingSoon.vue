@@ -1,7 +1,8 @@
 
 <template>
 
-  <div v-if="comingSoonControl" class="header-push"></div>
+  <HeaderPush v-if="comingSoonControl" />
+
 
   <div v-else class="coming-soon-container" 
     :style="{ 
@@ -49,6 +50,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 import ComingSoonBg from "../../../assets/images/coming-soon-bg.png"
 import DefaultButton from '../../../components/ui/DefaultButton.vue';
+import HeaderPush from '../../../components/ui/HeaderPush.vue';
 
 let comingSoonControl = false;
 
@@ -124,10 +126,7 @@ function updateCountdown() {
 
 <style scoped>
 
-.header-push{
-  background-color: var(--green-secondary-havier);
-  height: 12vh;
-}
+
 
 .coming-soon-container {
   height: 90vh;

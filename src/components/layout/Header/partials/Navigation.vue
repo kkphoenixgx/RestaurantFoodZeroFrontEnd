@@ -89,24 +89,31 @@ function closeNavigation(){
 </script>
 
 <style scoped>
+
+
   .navigation{
     position: absolute;
     z-index: 10;
     width: 100vw;
-    right: 0;
+    left: 0;
     top: 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: height 0.3s;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
   .menu{
-    height: 100%;
+    flex: 1 1 auto;
     width: 100vw;
     display: flex;
+    flex-direction: row;
     position: relative;
     z-index: 12;
+    min-height: 0;
   }
   .content, .contact-container{
     width: 50%;
@@ -114,24 +121,42 @@ function closeNavigation(){
     justify-content: center;
     align-items: center;
     flex-flow: column;
+    min-width: 0;
   }
   .contact{
-    margin-top: 32%;
-    width: 50%;
-    margin-left: 38%;
+    margin-top: 10vh;
+    width: 60%;
+    margin-left: 0;
+    min-width: 0;
   }
+
 
   ul{
     color: var(--white-default);
     font-size: 2rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
   }
+
 
   .link{
     text-decoration: none;
     color: var(--white-default);
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
   }
   .link:hover{
     color: var(--green-lighter);
+    background: rgba(255,255,255,0.07);
   }
 
   h3{
@@ -144,12 +169,17 @@ function closeNavigation(){
     margin-bottom: 5%;
   }
 
+
   .contact-links, .contact-adress{
     margin-bottom: 5%;
+    word-break: break-all;
   }
 
   .icons{
     display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
   }
   .icons a{
     height: fit-content;
@@ -171,6 +201,8 @@ function closeNavigation(){
     display: flex;
     align-items: center;
     justify-content: center;
+    background: none;
+    border: none;
   }
   .close-x-button::before, .close-x-button::after {
     content: '';
@@ -185,6 +217,93 @@ function closeNavigation(){
   }
   .close-x-button::after {
     transform: rotate(-45deg);
+  }
+
+
+  @media (max-width: 900px) {
+    .menu {
+      flex-direction: column;
+      width: 100vw;
+      height: 100%;
+      min-height: 0;
+    }
+    .content, .contact-container {
+      width: 100vw;
+      min-width: 0;
+      padding: 0 5vw;
+    }
+    .contact {
+      margin-top: 5vh;
+      width: 100%;
+      margin-left: 0;
+    }
+    ul {
+      font-size: 1.3rem;
+      text-align: center;
+      padding: 0;
+    }
+    .icons {
+      justify-content: center;
+      gap: 12px;
+    }
+    .close-x-button {
+      top: 16px;
+      left: 16px;
+      width: 28px;
+      height: 28px;
+    }
+    .close-x-button::before, .close-x-button::after {
+      width: 20px;
+      height: 2.5px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .navigation {
+      width: 100vw;
+      min-width: 0;
+    }
+    .menu {
+      flex-direction: column;
+      width: 100vw;
+      height: 100%;
+      min-height: 0;
+    }
+    .content, .contact-container {
+      width: 100vw;
+      min-width: 0;
+      padding: 0 2vw;
+    }
+    .contact {
+      margin-top: 4vh;
+      width: 100%;
+      margin-left: 0;
+    }
+    ul {
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 0;
+    }
+    .icons {
+      justify-content: center;
+      gap: 8px;
+    }
+    .close-x-button {
+      top: 8px;
+      left: 8px;
+      width: 24px;
+      height: 24px;
+    }
+    .close-x-button::before, .close-x-button::after {
+      width: 16px;
+      height: 2px;
+    }
+    .contact h3 {
+      font-size: 1rem;
+    }
+    .contact-links, .contact-adress {
+      font-size: 0.9rem;
+    }
   }
 
 </style>

@@ -4,10 +4,12 @@ import User from "./User";
 
 export default class Post {
 
+
   constructor(
     private _id: number,
     private _date: Date,
     private _description: string,
+    private _tittle: string,
     private _user: User,
     private _tags: Tag[],
     private _comentaries: Comentary[] = [],
@@ -55,5 +57,11 @@ export default class Post {
     this._user = value;
   }
   
+  public get tittle(): string {
+    return this._tittle;
+  }
+  public set tittle(value: string) {
+    this._tittle = value;
+  }
 
 }

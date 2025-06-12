@@ -20,12 +20,13 @@ const routes = [
   { path: '/about', component: About },
   { path: '/reservation', component: Reservation },
   { path: '/login', component: Login },
-  { path: '/signUp', component: SignUp },
-  { path: '/userView', component: UserView },
+  { path: '/signup', component: SignUp },
+  { path: '/userview', component: UserView },
   { path: '/blog', component: Blog },
+  { path: '/blog/:id', component: () => import('../views/Blog/partials/BlogPost.vue'), name: 'BlogPost' },
   { path: '/portifolio', component: Portifolio },
+  { path: '/portifolio/:id', component: () => import('../views/Portifolio/Partials/PortifolioItem.vue'), name: 'PortifolioItem' },
   { path: '/menu', component: Menu },
-
 ]
 
 export default createRouter({

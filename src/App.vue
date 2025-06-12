@@ -14,4 +14,7 @@
 </script>
 
 <style scoped>
+section{
+  min-height: 88.5vh;
+}
 </style>

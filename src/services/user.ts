@@ -17,25 +17,25 @@ export function userFromApi(data: UserApiResponse): User {
 }
 
 export async function getUser(id: number): Promise<User> {
-  const data = await apiGet<UserApiResponse>(`/user/${id}`);
+  const data = await apiGet<UserApiResponse>(`/users/${id}`);
   return userFromApi(data);
 }
 
 export async function listUsers(): Promise<User[]> {
-  const data = await apiGet<UserApiResponse[]>(`/user`);
+  const data = await apiGet<UserApiResponse[]>(`/users`);
   return data.map(userFromApi);
 }
 
 export async function createUser<T extends object>(data: T): Promise<User> {
-  const res = await apiPost<UserApiResponse>(`/user`, data);
+  const res = await apiPost<UserApiResponse>(`/users`, data);
   return userFromApi(res);
 }
 
 export async function updateUser<T extends object>(id: number, data: T): Promise<User> {
-  const res = await apiPut<UserApiResponse>(`/user/${id}`, data);
+  const res = await apiPut<UserApiResponse>(`/users/${id}`, data);
   return userFromApi(res);
 }
 
 export async function deleteUser(id: number): Promise<{ message: string }> {
-  return apiDelete<{ message: string }>(`/user/${id}`);
+  return apiDelete<{ message: string }>(`/users/${id}`);
 }

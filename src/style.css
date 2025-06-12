@@ -39,6 +39,7 @@ body{
   font-family: 'Rufina', serif;
   line-height: 1.5;
   font-weight: 400;
+  overflow-x: hidden;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -50,7 +51,7 @@ body{
   --white-default : #FFF;
   --white-secondary : #EBF0E4;
   --black-default : #000;
-  --green-havier: #233000;
+  --green-havier: #233000; /*233000*/
   --green-secondary-havier: #101500;
   --green-seconday: #5E6600;
   --green-lighter: #9CAA00;

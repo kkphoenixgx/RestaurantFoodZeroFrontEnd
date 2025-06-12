@@ -12,6 +12,7 @@ export function postFromApi(data: PostApiResponse): Post {
     data._id,
     new Date(data._date),
     data._description,
+    data._tittle,
     userFromApi(data._user),
     tagsFromApi(data._tags),
     comentariesFromApi(data._comentaries)
@@ -19,25 +20,25 @@ export function postFromApi(data: PostApiResponse): Post {
 }
 
 export async function getPost(id: number): Promise<Post> {
-  const data = await apiGet<PostApiResponse>(`/post/${id}`);
+  const data = await apiGet<PostApiResponse>(`/posts/${id}`);
   return postFromApi(data);
 }
 
 export async function listPosts(): Promise<Post[]> {
-  const data = await apiGet<PostApiResponse[]>(`/post`);
+  const data = await apiGet<PostApiResponse[]>(`/posts`);
   return data.map(postFromApi);
 }
 
 export async function createPost<T extends object>(data: T): Promise<Post> {
-  const res = await apiPost<PostApiResponse>(`/post`, data);
+  const res = await apiPost<PostApiResponse>(`/posts`, data);
   return postFromApi(res);
 }
 
 export async function updatePost<T extends object>(id: number, data: T): Promise<Post> {
-  const res = await apiPut<PostApiResponse>(`/post/${id}`, data);
+  const res = await apiPut<PostApiResponse>(`/posts/${id}`, data);
   return postFromApi(res);
 }
 
 export async function deletePost(id: number): Promise<{ message: string }> {
-  return apiDelete<{ message: string }>(`/post/${id}`);
+  return apiDelete<{ message: string }>(`/posts/${id}`);
 }
